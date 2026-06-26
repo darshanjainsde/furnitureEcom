@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "db:push": "prisma db push",
-    "db:seed": "tsx prisma/seed.ts",
+    "db:seed": "SEED_FORCE=1 tsx prisma/seed.ts",
     "db:reset": "prisma db push --force-reset && tsx prisma/seed.ts",
     "db:studio": "prisma studio",
     "postinstall": "prisma generate",
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
+    "@vercel/blob": "^2.5.0",
     "bcryptjs": "^3.0.3",
     "clsx": "^2.1.1",
     "framer-motion": "^12.42.0",

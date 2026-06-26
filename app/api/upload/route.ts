@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
+import { put } from "@vercel/blob";
 import { getSession } from "@/lib/auth";
 
 const ALLOWED = ["image/png", "image/jpeg", "image/webp", "image/svg+xml", "image/avif"];
@@ -22,12 +23,22 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "File too large (max 8MB)" }, { status: 413 });
   }
 
-  const bytes = Buffer.from(await file.arrayBuffer());
   const ext = (file.name.split(".").pop() || "img").toLowerCase().replace(/[^a-z0-9]/g, "") || "img";
   const name = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
+
+  // Production (Vercel): persist to Vercel Blob. Local dev: write to public/uploads.
+  if (process.env.BLOB_READ_WRITE_TOKEN) {
+    const blob = await put(`uploads/${name}`, file, {
+      access: "public",
+      token: process.env.BLOB_READ_WRITE_TOKEN,
+      contentType: file.type,
+    });
+    return NextResponse.json({ url: blob.url });
+  }
+
+  const bytes = Buffer.from(await file.arrayBuffer());
   const dir = path.join(process.cwd(), "public", "uploads");
   await mkdir(dir, { recursive: true });
   await writeFile(path.join(dir, name), bytes);
-
   return NextResponse.json({ url: `/uploads/${name}` });
 }

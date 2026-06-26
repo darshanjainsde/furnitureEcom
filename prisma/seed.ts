@@ -17,6 +17,15 @@ const IMG = {
 async function main() {
   console.log("Seeding FINOKRAFT…");
 
+  // Idempotent guard: only (re)seed when the DB is empty, unless forced.
+  // This lets the production build run `tsx prisma/seed.ts` safely on every
+  // deploy without ever wiping live data. Local resets pass SEED_FORCE=1.
+  const existing = await prisma.user.count();
+  if (existing > 0 && process.env.SEED_FORCE !== "1") {
+    console.log("DB already seeded — skipping.");
+    return;
+  }
+
   // wipe (dev only) in FK-safe order
   await prisma.lead.deleteMany();
   await prisma.product.deleteMany();
