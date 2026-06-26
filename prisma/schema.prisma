@@ -1,0 +1,136 @@
+// FINOKRAFT — data model (SQLite for local dev; swap datasource to postgresql for cloud)
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// Singleton site-wide configuration (managed in the Owner portal)
+model SiteConfig {
+  id              String   @id @default("singleton")
+  brandName       String   @default("FINOKRAFT")
+  tagline         String   @default("Crafting Spaces, Inspiring Living")
+  logoUrl         String   @default("/brand/finokraft-logo.png")
+  heroHeadline    String   @default("Crafting Spaces, Inspiring Living")
+  heroSubtext     String   @default("Bespoke modular furniture & full-home interiors, designed around how you live.")
+  heroImageUrl    String?
+  aboutTitle      String   @default("About FINOKRAFT")
+  aboutBody       String   @default("")
+  footerTagline   String   @default("Crafting Spaces, Inspiring Living")
+  metaTitle       String   @default("FINOKRAFT — Modular Furniture & Interiors")
+  metaDescription String   @default("Bespoke modular kitchens, wardrobes and full-home interiors. Crafting Spaces, Inspiring Living.")
+  primaryColor    String   @default("#2E5E34")
+  accentColor     String   @default("#A86A3D")
+  updatedAt       DateTime @updatedAt @default(now())
+}
+
+/// Contact / phone details shown on site (managed in the Business portal)
+model ContactDetail {
+  id        String  @id @default(cuid())
+  label     String  @default("Sales")
+  phone     String?
+  whatsapp  String?
+  email     String?
+  address   String?
+  isPrimary Boolean @default(false)
+  order     Int     @default(0)
+}
+
+/// Social media links (managed in the Owner portal)
+model SocialLink {
+  id       String  @id @default(cuid())
+  platform String // instagram | facebook | youtube | linkedin | pinterest | x | whatsapp
+  url      String
+  isActive Boolean @default(true)
+  order    Int     @default(0)
+}
+
+/// "Services we offer" tiles
+model Service {
+  id       String  @id @default(cuid())
+  title    String
+  slug     String  @unique
+  icon     String  @default("Sofa") // lucide-react icon name
+  blurb    String
+  order    Int     @default(0)
+  isActive Boolean @default(true)
+}
+
+/// "Why choose us" trust points
+model WhyChooseUs {
+  id    String @id @default(cuid())
+  icon  String @default("BadgeCheck")
+  title String
+  text  String
+  order Int    @default(0)
+}
+
+/// Furniture taxonomy — self-referencing for subcategories
+model Category {
+  id          String     @id @default(cuid())
+  name        String
+  slug        String     @unique
+  description String?
+  imageUrl    String?
+  order       Int        @default(0)
+  isActive    Boolean    @default(true)
+  parentId    String?
+  parent      Category?  @relation("CategoryChildren", fields: [parentId], references: [id], onDelete: SetNull)
+  children    Category[] @relation("CategoryChildren")
+  products    Product[]
+}
+
+/// Products / works shown under categories. `images` is a JSON-encoded string array.
+model Product {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  description String?
+  images      String    @default("[]")
+  videoUrl    String?
+  categoryId  String?
+  category    Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  isFeatured  Boolean   @default(false)
+  order       Int       @default(0)
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  leads       Lead[]
+}
+
+/// Captured leads (Business portal)
+model Lead {
+  id        String   @id @default(cuid())
+  name      String
+  phone     String
+  email     String?
+  message   String?
+  source    String   @default("home") // home | product | category | contact
+  productId String?
+  product   Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  status    String   @default("NEW") // NEW | CONTACTED | CLOSED
+  notes     String?
+  createdAt DateTime @default(now())
+}
+
+model Testimonial {
+  id        String  @id @default(cuid())
+  name      String
+  role      String?
+  quote     String
+  avatarUrl String?
+  order     Int     @default(0)
+  isActive  Boolean @default(true)
+}
+
+/// Portal users — role gates Owner vs Business portal
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String?
+  role         String // OWNER | BUSINESS
+  createdAt    DateTime @default(now())
+}

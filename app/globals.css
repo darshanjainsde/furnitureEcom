@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette (from the FINOKRAFT logo) */
+  --color-cream: #faf6ee;
+  --color-cream-200: #f4ecdd;
+  --color-cream-300: #ebe0cb;
+  --color-green: #2e5e34;
+  --color-green-600: #2a5530;
+  --color-green-700: #244a29;
+  --color-green-900: #1e3d22;
+  --color-walnut: #a86a3d;
+  --color-walnut-600: #97603a;
+  --color-walnut-700: #8a5430;
+  --color-sage: #6e8f6b;
+  --color-ink: #2b2a26;
+  --color-muted: #6b6a63;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), Georgia, "Times New Roman", serif;
+
+  --shadow-card: 0 1px 2px rgba(43, 42, 38, 0.04), 0 12px 30px -12px rgba(43, 42, 38, 0.18);
+}
+
+:root {
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* utilities */
+.font-serif {
+  font-family: var(--font-serif);
+}
+.container-x {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 1024px) {
+  .container-x {
+    padding-inline: 2rem;
+  }
+}
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+/* subtle paper texture */
+.bg-paper {
+  background-color: var(--color-cream);
+  background-image: radial-gradient(rgba(43, 42, 38, 0.035) 1px, transparent 1px);
+  background-size: 22px 22px;
+}

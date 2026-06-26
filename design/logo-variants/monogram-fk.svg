@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="FINOKRAFT app icon">
+  <rect width="200" height="200" rx="44" fill="#1B1A18"/>
+  <!-- Modular F mark, app-icon / social fallback -->
+  <g transform="translate(57,46)" fill="#F4F1EA">
+    <rect x="0"  y="0"   width="20" height="20"/>
+    <rect x="22" y="0"   width="20" height="20"/>
+    <rect x="44" y="0"   width="20" height="20"/>
+    <rect x="66" y="0"   width="20" height="20"/>
+    <rect x="0"  y="22"  width="20" height="20"/>
+    <rect x="0"  y="44"  width="20" height="20"/>
+    <rect x="22" y="44"  width="20" height="20"/>
+    <rect x="44" y="44"  width="20" height="20" fill="#C7A06A"/>
+    <rect x="0"  y="66"  width="20" height="20"/>
+    <rect x="0"  y="88"  width="20" height="20"/>
+  </g>
+</svg>

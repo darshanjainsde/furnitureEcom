@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 200" role="img" aria-label="FINOKRAFT — Modular Furniture">
+  <rect width="660" height="200" fill="none"/>
+  <!-- Premium serif wordmark, led by a single walnut module -->
+  <rect x="46" y="70" width="30" height="30" fill="#A06A3A"/>
+  <text x="98" y="118" font-family="Georgia,'Times New Roman',serif" font-size="66" font-weight="400" letter-spacing="3" fill="#1B1A18">FINOKRAFT</text>
+  <text x="100" y="150" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" letter-spacing="7" fill="#6B5B4A">MODULAR&#160;&#160;FURNITURE</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 200" role="img" aria-label="FINOKRAFT">
+  <rect width="660" height="200" fill="none"/>
+  <!-- Symbol: 3x3 configurable grid — filled + open modules -->
+  <g transform="translate(50,52)">
+    <!-- filled modules -->
+    <rect x="0"  y="0"  width="26" height="26" fill="#1B1A18"/>
+    <rect x="32" y="0"  width="26" height="26" fill="#1B1A18"/>
+    <rect x="64" y="0"  width="26" height="26" fill="#A06A3A"/>
+    <rect x="0"  y="32" width="26" height="26" fill="#1B1A18"/>
+    <rect x="0"  y="64" width="26" height="26" fill="#1B1A18"/>
+    <rect x="32" y="64" width="26" height="26" fill="#1B1A18"/>
+    <!-- open modules (configurable slots) -->
+    <rect x="32" y="32" width="26" height="26" fill="none" stroke="#1B1A18" stroke-width="2.5"/>
+    <rect x="64" y="32" width="26" height="26" fill="none" stroke="#1B1A18" stroke-width="2.5"/>
+    <rect x="64" y="64" width="26" height="26" fill="none" stroke="#1B1A18" stroke-width="2.5"/>
+  </g>
+  <text x="190" y="124" font-family="'Helvetica Neue',Arial,sans-serif" font-size="62" font-weight="500" letter-spacing="6" fill="#1B1A18">FINOKRAFT</text>
+</svg>

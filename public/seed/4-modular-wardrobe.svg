@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Modular Wardrobe">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1E3D22"/>
+      <stop offset="1" stop-color="#2E5E34"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <g transform="translate(400 250) scale(4.2) translate(-50 -50)" fill="none" stroke="#F8F4EC" stroke-opacity="0.55" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M26,22 h48 v56 h-48 z M50,22 v56 M44,48 v8 M56,48 v8"/>
+  </g>
+  <text x="400" y="470" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="56" fill="#F8F4EC">Modular Wardrobe</text>
+  <text x="400" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" letter-spacing="6" fill="#F8F4EC" fill-opacity="0.8">FINOKRAFT</text>
+</svg>

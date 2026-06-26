@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FINOKRAFT · Logo Variants</title>
+<style>
+  :root{ --ink:#1B1A18; --walnut:#A06A3A; --paper:#F4F1EA; --muted:#6B5B4A; }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  header{padding:56px 48px 24px;border-bottom:1px solid #e3ddd1;}
+  header h1{margin:0;font-size:14px;letter-spacing:6px;font-weight:600;}
+  header p{margin:8px 0 0;color:var(--muted);font-size:13px;letter-spacing:.5px;max-width:680px;line-height:1.6;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:28px;padding:40px 48px;}
+  .card{background:#fff;border:1px solid #ece6da;border-radius:10px;overflow:hidden;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);}
+  .stage{display:flex;align-items:center;justify-content:center;height:200px;padding:24px;background:#fff;}
+  .stage.dark{background:var(--ink);}
+  .stage img{max-width:100%;max-height:100%;}
+  .meta{padding:16px 20px;border-top:1px solid #f0ebe1;}
+  .meta .id{font-size:11px;letter-spacing:2px;color:var(--walnut);font-weight:600;}
+  .meta .name{font-size:14px;margin-top:4px;}
+  .meta .desc{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.5;}
+  .rec{display:inline-block;margin-left:8px;font-size:10px;letter-spacing:1px;background:var(--walnut);
+    color:#fff;padding:2px 7px;border-radius:20px;vertical-align:middle;}
+  .small-row{display:flex;gap:24px;align-items:center;padding:40px 48px 64px;border-top:1px solid #e3ddd1;}
+  .swatches{display:flex;gap:14px;padding:0 48px 48px;flex-wrap:wrap;}
+  .sw{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);}
+  .chip{width:34px;height:34px;border-radius:6px;border:1px solid rgba(0,0,0,.08);}
+  .fav{width:32px;height:32px;}
+  .fav.lg{width:64px;height:64px;}
+</style>
+</head>
+<body>
+<header>
+  <h1>F I N O K R A F T</h1>
+  <p>Modular furniture · logo variant exploration. Architectural &amp; premium look, accessible positioning,
+     modularity expressed in the mark. Warm walnut accent on architectural ink. Decision material — pick a
+     direction and I refine it to production.</p>
+</header>
+
+<div class="grid">
+  <div class="card">
+    <div class="stage"><img src="logo-variants/01-modular-grid-f.svg" alt="01"></div>
+    <div class="meta"><div class="id">01 · LOCKUP</div>
+      <div class="name">Modular Grid F<span class="rec">RECOMMENDED</span></div>
+      <div class="desc">The “F” built from stacked modules. The symbol IS the favicon — strongest small-size + on-concept.</div></div>
+  </div>
+  <div class="card">
+    <div class="stage"><img src="logo-variants/02-joinery-seam.svg" alt="02"></div>
+    <div class="meta"><div class="id">02 · LOCKUP</div>
+      <div class="name">Joinery Seam</div>
+      <div class="desc">Two modules slot together (mortise &amp; tenon). Abstract — says “craft + connection” without an F.</div></div>
+  </div>
+  <div class="card">
+    <div class="stage"><img src="logo-variants/03-stack.svg" alt="03"></div>
+    <div class="meta"><div class="id">03 · LOCKUP</div>
+      <div class="name">Stack</div>
+      <div class="desc">Stacked units — shelving / flat-pack. Minimal, warm, very legible at any size.</div></div>
+  </div>
+  <div class="card">
+    <div class="stage"><img src="logo-variants/04-serif-wordmark.svg" alt="04"></div>
+    <div class="meta"><div class="id">04 · WORDMARK</div>
+      <div class="name">Editorial Serif</div>
+      <div class="desc">Premium/architectural register. A single walnut module + descriptor. Most “design-led”.</div></div>
+  </div>
+  <div class="card">
+    <div class="stage"><img src="logo-variants/05-stacked-block.svg" alt="05"></div>
+    <div class="meta"><div class="id">05 · LOGOTYPE</div>
+      <div class="name">Stacked Block</div>
+      <div class="desc">FINO / KRAFT as a solid type block — a “module” itself. Excellent for square / social.</div></div>
+  </div>
+  <div class="card">
+    <div class="stage"><img src="logo-variants/06-configurator-grid.svg" alt="06"></div>
+    <div class="meta"><div class="id">06 · LOCKUP</div>
+      <div class="name">Configurator Grid</div>
+      <div class="desc">3×3 of filled + open modules — literally “configure your own”. Most explicit on modularity.</div></div>
+  </div>
+</div>
+
+<div class="small-row">
+  <div>
+    <div class="meta" style="border:0;padding:0 0 12px"><div class="id">APP ICON / SOCIAL</div></div>
+    <div class="stage" style="height:auto;padding:0;background:transparent">
+      <img src="logo-variants/monogram-fk.svg" style="width:96px;height:96px" alt="app icon">
+    </div>
+  </div>
+  <div style="margin-left:32px">
+    <div class="meta" style="border:0;padding:0 0 12px"><div class="id">FAVICON 32 / 16 px</div></div>
+    <img class="fav lg" src="logo-variants/favicon-f.svg" alt="favicon 64">
+    <img class="fav" src="logo-variants/favicon-f.svg" alt="favicon 32" style="margin-left:14px">
+    <img src="logo-variants/favicon-f.svg" alt="favicon 16" style="width:16px;height:16px;margin-left:14px">
+  </div>
+</div>
+
+<div class="swatches">
+  <div class="sw"><span class="chip" style="background:#1B1A18"></span>Ink&nbsp;#1B1A18</div>
+  <div class="sw"><span class="chip" style="background:#A06A3A"></span>Walnut&nbsp;#A06A3A</div>
+  <div class="sw"><span class="chip" style="background:#C7A06A"></span>Brass&nbsp;#C7A06A</div>
+  <div class="sw"><span class="chip" style="background:#F4F1EA"></span>Paper&nbsp;#F4F1EA</div>
+</div>
+</body>
+</html>

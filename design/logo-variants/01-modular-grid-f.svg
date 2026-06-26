@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 200" role="img" aria-label="FINOKRAFT">
+  <rect width="660" height="200" fill="none"/>
+  <!-- Symbol: letter F built from stacked modular blocks -->
+  <g transform="translate(46,50)" fill="#1B1A18">
+    <rect x="0"  y="0"  width="18" height="18"/>
+    <rect x="20" y="0"  width="18" height="18"/>
+    <rect x="40" y="0"  width="18" height="18"/>
+    <rect x="60" y="0"  width="18" height="18"/>
+    <rect x="0"  y="20" width="18" height="18"/>
+    <rect x="0"  y="40" width="18" height="18"/>
+    <rect x="20" y="40" width="18" height="18"/>
+    <rect x="40" y="40" width="18" height="18" fill="#A06A3A"/>
+    <rect x="0"  y="60" width="18" height="18"/>
+    <rect x="0"  y="80" width="18" height="18"/>
+  </g>
+  <text x="180" y="124" font-family="'Helvetica Neue',Arial,sans-serif" font-size="62" font-weight="500" letter-spacing="6" fill="#1B1A18">FINOKRAFT</text>
+</svg>
