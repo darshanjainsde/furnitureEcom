@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 200" role="img" aria-label="FINOKRAFT">
+  <!-- Joinery Seam: two modules slotting together (mortise & tenon) -->
+  <g transform="translate(50,55)">
+    <polygon points="0,0 45,0 45,30 57,30 57,60 45,60 45,90 0,90" fill="#1B1A18"/>
+    <polygon points="47,0 90,0 90,90 47,90 47,62 59,62 59,28 47,28" fill="#A06A3A"/>
+  </g>
+  <text x="180" y="124" font-family="'Helvetica Neue',Arial,sans-serif" font-size="62" font-weight="600" letter-spacing="6" fill="#1B1A18">FINOKRAFT</text>
+</svg>

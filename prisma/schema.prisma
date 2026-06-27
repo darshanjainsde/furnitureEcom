@@ -14,7 +14,7 @@ model SiteConfig {
   id              String   @id @default("singleton")
   brandName       String   @default("FINOKRAFT")
   tagline         String   @default("Crafting Spaces, Inspiring Living")
-  logoUrl         String   @default("/brand/finokraft-logo.png")
+  logoUrl         String   @default("/brand/finokraft-joinery.svg")
   heroHeadline    String   @default("Crafting Spaces, Inspiring Living")
   heroSubtext     String   @default("Bespoke modular furniture & full-home interiors, designed around how you live.")
   heroImageUrl    String?
@@ -23,8 +23,8 @@ model SiteConfig {
   footerTagline   String   @default("Crafting Spaces, Inspiring Living")
   metaTitle       String   @default("FINOKRAFT — Modular Furniture & Interiors")
   metaDescription String   @default("Bespoke modular kitchens, wardrobes and full-home interiors. Crafting Spaces, Inspiring Living.")
-  primaryColor    String   @default("#2E5E34")
-  accentColor     String   @default("#A86A3D")
+  primaryColor    String   @default("#8A5430")
+  accentColor     String   @default("#A06A3A")
   updatedAt       DateTime @updatedAt @default(now())
 }
 

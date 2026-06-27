@@ -86,16 +86,16 @@ export default async function ProductPage({
             </ul>
 
             <div className="mt-7 rounded-2xl border border-ink/8 bg-white p-5 shadow-[var(--shadow-card)]">
-              <p className="font-serif text-xl text-ink">Enquire about this piece</p>
+              <p className="font-serif text-xl text-ink">Book a free consultation</p>
               <p className="mb-4 mt-1 text-sm text-muted">
-                Tell us about your space — we’ll call you back with ideas and a quote.
+                Tell us about your space — a designer will call you back with ideas and a quote.
               </p>
               <LeadForm
                 source="product"
                 productId={product.id}
                 productTitle={product.title}
                 variant="full"
-                ctaLabel="Request callback"
+                ctaLabel="Book my consultation"
               />
             </div>
           </div>

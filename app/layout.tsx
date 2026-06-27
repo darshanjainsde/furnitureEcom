@@ -24,7 +24,6 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s · ${cfg.brandName}`,
     },
     description: cfg.metaDescription,
-    icons: { icon: "/favicon.ico" },
     openGraph: {
       title: cfg.metaTitle,
       description: cfg.metaDescription,

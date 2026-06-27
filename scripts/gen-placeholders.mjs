@@ -8,10 +8,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dirname, "..", "public", "seed");
 mkdirSync(OUT, { recursive: true });
 
-const GREEN = "#2E5E34";
-const DEEP = "#1E3D22";
-const WALNUT = "#A86A3D";
-const CREAM = "#F4ECDD";
+const GREEN = "#2A2723"; // warm charcoal (kept var name)
+const DEEP = "#161513"; // deep ink
+const WALNUT = "#8A5430"; // deep walnut
+const CREAM = "#EFE7D7"; // cream
 
 // label, two gradient stops, simple furniture glyph path (drawn in a 0..100 box, stroke)
 const items = [

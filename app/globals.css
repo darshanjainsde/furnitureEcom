@@ -1,20 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand palette (from the FINOKRAFT logo) */
-  --color-cream: #faf6ee;
-  --color-cream-200: #f4ecdd;
-  --color-cream-300: #ebe0cb;
-  --color-green: #2e5e34;
-  --color-green-600: #2a5530;
-  --color-green-700: #244a29;
-  --color-green-900: #1e3d22;
-  --color-walnut: #a86a3d;
-  --color-walnut-600: #97603a;
+  /* Brand palette — "Joinery Seam" identity: ink + walnut on cream.
+     Token names kept (green/*) for minimal churn; values are now the
+     deep-walnut primary, light-walnut accent and warm-charcoal darks. */
+  --color-cream: #f4f1ea;
+  --color-cream-200: #ece5d7;
+  --color-cream-300: #e0d7c4;
+  /* primary (CTAs, links, lead band) = deep walnut */
+  --color-green: #8a5430;
+  --color-green-600: #7c4b2b;
+  --color-green-700: #6e4226;
+  /* large dark sections + footer = warm charcoal/ink */
+  --color-green-900: #211f1c;
+  /* accent (eyebrows, icons, the logo seam) = lighter walnut */
+  --color-walnut: #a06a3a;
+  --color-walnut-600: #966235;
   --color-walnut-700: #8a5430;
-  --color-sage: #6e8f6b;
-  --color-ink: #2b2a26;
-  --color-muted: #6b6a63;
+  --color-sage: #9c8260;
+  --color-ink: #1b1a18;
+  --color-muted: #6e675c;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-cormorant), Georgia, "Times New Roman", serif;
@@ -73,6 +78,26 @@ body {
   text-transform: uppercase;
   font-weight: 600;
 }
+/* modal entrance */
+@keyframes fk-pop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fk-pop {
+  animation: fk-pop 0.18s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fk-pop {
+    animation: none;
+  }
+}
+
 /* subtle paper texture */
 .bg-paper {
   background-color: var(--color-cream);

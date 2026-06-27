@@ -5,7 +5,7 @@ const DEFAULT_CONFIG = {
   id: "singleton",
   brandName: "FINOKRAFT",
   tagline: "Crafting Spaces, Inspiring Living",
-  logoUrl: "/brand/finokraft-logo.png",
+  logoUrl: "/brand/finokraft-joinery.svg",
   heroHeadline: "Crafting Spaces, Inspiring Living",
   heroSubtext: "Bespoke modular furniture & full-home interiors.",
   heroImageUrl: null as string | null,
@@ -14,8 +14,8 @@ const DEFAULT_CONFIG = {
   footerTagline: "Crafting Spaces, Inspiring Living",
   metaTitle: "FINOKRAFT — Modular Furniture & Interiors",
   metaDescription: "Bespoke modular kitchens, wardrobes and full-home interiors.",
-  primaryColor: "#2E5E34",
-  accentColor: "#A86A3D",
+  primaryColor: "#8A5430",
+  accentColor: "#A06A3A",
 };
 
 export type SiteConfigShape = typeof DEFAULT_CONFIG;

@@ -17,6 +17,18 @@ const IMG = {
 async function main() {
   console.log("Seeding FINOKRAFT…");
 
+  // One-time branding migration (runs every deploy, before the guard): flip the
+  // old green logo to the Joinery Seam mark + walnut colors — but ONLY if the
+  // value is still the old default, so a custom-uploaded logo is never clobbered.
+  await prisma.siteConfig.updateMany({
+    where: { logoUrl: "/brand/finokraft-logo.png" },
+    data: {
+      logoUrl: "/brand/finokraft-joinery.svg",
+      primaryColor: "#8A5430",
+      accentColor: "#A06A3A",
+    },
+  });
+
   // Idempotent guard: only (re)seed when the DB is empty, unless forced.
   // This lets the production build run `tsx prisma/seed.ts` safely on every
   // deploy without ever wiping live data. Local resets pass SEED_FORCE=1.
@@ -62,6 +74,9 @@ async function main() {
       id: "singleton",
       brandName: "FINOKRAFT",
       tagline: "Crafting Spaces, Inspiring Living",
+      logoUrl: "/brand/finokraft-joinery.svg",
+      primaryColor: "#8A5430",
+      accentColor: "#A06A3A",
       heroHeadline: "Modular furniture, crafted around your life.",
       heroSubtext:
         "From bespoke modular kitchens and wardrobes to full-home interiors — FINOKRAFT designs, crafts and installs spaces that inspire everyday living.",

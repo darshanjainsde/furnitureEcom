@@ -42,8 +42,8 @@ export function LeadForm({
   const fieldCls = cn(
     "w-full rounded-xl border px-4 py-3 text-sm outline-none transition placeholder:text-muted/70",
     dark
-      ? "border-cream/25 bg-cream/10 text-cream placeholder:text-cream/50 focus:border-cream/60"
-      : "border-ink/12 bg-white text-ink focus:border-green",
+      ? "border-cream/25 bg-cream/10 text-cream placeholder:text-cream/50 focus:border-cream/60 focus:ring-2 focus:ring-cream/20"
+      : "border-ink/12 bg-white text-ink focus:border-green focus:ring-2 focus:ring-green/15",
   );
   const labelCls = cn("mb-1 block text-xs font-medium", dark ? "text-cream/80" : "text-ink/70");
 

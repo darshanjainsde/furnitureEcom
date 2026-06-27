@@ -33,13 +33,13 @@ export function ProductCard({ product }: { product: Product }) {
             {product.title}
           </Link>
         </h3>
-        <div className="mt-4 flex items-center gap-3 pt-1">
-          <EnquireButton productId={product.id} productTitle={product.title} />
+        <div className="mt-auto flex flex-col gap-2 pt-4">
+          <EnquireButton productId={product.id} productTitle={product.title} full />
           <Link
             href={`/product/${product.slug}`}
-            className="text-sm font-medium text-green hover:underline"
+            className="text-center text-sm font-medium text-green hover:underline"
           >
-            View details
+            View details →
           </Link>
         </div>
       </div>

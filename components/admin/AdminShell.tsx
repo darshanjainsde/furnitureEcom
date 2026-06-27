@@ -20,14 +20,13 @@ export type NavItem = { href: string; label: string; icon: keyof typeof ICONS };
 
 export function AdminShell({
   brandName,
-  logoUrl,
   role,
   userName,
   nav,
   children,
 }: {
   brandName: string;
-  logoUrl: string;
+  logoUrl?: string;
   role: "OWNER" | "BUSINESS";
   userName?: string;
   nav: NavItem[];
@@ -40,7 +39,8 @@ export function AdminShell({
   const SidebarInner = (
     <div className="flex h-full flex-col">
       <div className="flex items-center gap-2 px-5 py-5">
-        <Image src={logoUrl} alt={brandName} width={140} height={70} className="h-8 w-auto" />
+        {/* reverse mark for the dark sidebar (keeps the ink wordmark legible) */}
+        <Image src="/brand/finokraft-joinery-reverse.svg" alt={brandName} width={150} height={45} className="h-7 w-auto" />
       </div>
       <p className="px-5 pb-2 text-[11px] font-semibold uppercase tracking-wider text-cream/40">
         {portalLabel}
