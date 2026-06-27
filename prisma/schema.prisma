@@ -18,6 +18,7 @@ model SiteConfig {
   heroHeadline    String   @default("Crafting Spaces, Inspiring Living")
   heroSubtext     String   @default("Bespoke modular furniture & full-home interiors, designed around how you live.")
   heroImageUrl    String?
+  heroImages      String   @default("[]") // JSON array of up to 3 homepage hero image URLs
   aboutTitle      String   @default("About FINOKRAFT")
   aboutBody       String   @default("")
   footerTagline   String   @default("Crafting Spaces, Inspiring Living")

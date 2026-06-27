@@ -9,6 +9,7 @@ const DEFAULT_CONFIG = {
   heroHeadline: "Crafting Spaces, Inspiring Living",
   heroSubtext: "Bespoke modular furniture & full-home interiors.",
   heroImageUrl: null as string | null,
+  heroImages: "[]",
   aboutTitle: "About FINOKRAFT",
   aboutBody: "",
   footerTagline: "Crafting Spaces, Inspiring Living",

@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db";
 import { getSession } from "@/lib/auth";
-import { slugify } from "@/lib/utils";
+import { slugify, parseImages } from "@/lib/utils";
 
 async function assertOwner() {
   const s = await getSession();
@@ -38,6 +38,7 @@ export async function updateSiteConfig(fd: FormData) {
     logoUrl: str(fd, "logoUrl") || "/brand/finokraft-logo.png",
     heroHeadline: str(fd, "heroHeadline"),
     heroSubtext: str(fd, "heroSubtext"),
+    heroImages: JSON.stringify(parseImages(str(fd, "heroImages")).slice(0, 3)),
     aboutTitle: str(fd, "aboutTitle"),
     aboutBody: str(fd, "aboutBody"),
     footerTagline: str(fd, "footerTagline"),

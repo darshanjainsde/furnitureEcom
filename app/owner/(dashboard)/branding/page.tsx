@@ -1,7 +1,8 @@
 import { updateSiteConfig } from "@/app/actions/owner";
-import { AdminHeader, Card, Field, inputCls } from "@/components/admin/ui";
+import { AdminHeader, Card, Field, inputCls, labelCls } from "@/components/admin/ui";
 import { SubmitButton, ImageUploader } from "@/components/admin/controls";
 import { getSiteConfig } from "@/lib/site";
+import { parseImages } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
@@ -36,6 +37,13 @@ export default async function BrandingPage() {
           <div className="grid gap-4">
             <Field label="Hero headline"><input name="heroHeadline" defaultValue={cfg.heroHeadline} className={inputCls} /></Field>
             <Field label="Hero subtext"><textarea name="heroSubtext" defaultValue={cfg.heroSubtext} rows={3} className={inputCls} /></Field>
+            <div>
+              <p className={labelCls}>Homepage hero images (up to 3 — the collage beside the headline)</p>
+              <ImageUploader name="heroImages" multiple initial={parseImages(cfg.heroImages)} />
+              <p className="mt-1.5 text-xs text-muted">
+                Leave empty to automatically use your first 3 category images. The 1st image is shown large.
+              </p>
+            </div>
           </div>
         </Card>
 

@@ -3,7 +3,20 @@ import { BadgeCheck, Boxes, Clock } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { LeadForm } from "@/components/site/LeadForm";
 
-export function Hero({ headline, subtext }: { headline: string; subtext: string }) {
+export function Hero({
+  headline,
+  subtext,
+  images = [],
+}: {
+  headline: string;
+  subtext: string;
+  images?: string[];
+}) {
+  const pics = [
+    images[0] ?? "/seed/3-kitchen-dining.svg",
+    images[1] ?? "/seed/4-modular-wardrobe.svg",
+    images[2] ?? "/seed/1-living-room.svg",
+  ];
   return (
     <section className="bg-paper">
       <div className="container-x grid items-center gap-12 py-14 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
@@ -43,13 +56,13 @@ export function Hero({ headline, subtext }: { headline: string; subtext: string 
         <Reveal delay={0.1} y={32}>
           <div className="relative mx-auto grid max-w-md grid-cols-2 gap-3 sm:gap-4">
             <div className="relative col-span-2 aspect-[16/10] overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
-              <Image src="/seed/3-kitchen-dining.svg" alt="Modular kitchen" fill className="object-cover" />
+              <Image src={pics[0]} alt="Featured work" fill className="object-cover" />
             </div>
             <div className="relative aspect-square overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
-              <Image src="/seed/4-modular-wardrobe.svg" alt="Wardrobe" fill className="object-cover" />
+              <Image src={pics[1]} alt="Featured work" fill className="object-cover" />
             </div>
             <div className="relative aspect-square overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
-              <Image src="/seed/1-living-room.svg" alt="Living room" fill className="object-cover" />
+              <Image src={pics[2]} alt="Featured work" fill className="object-cover" />
             </div>
           </div>
         </Reveal>
